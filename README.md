@@ -67,3 +67,8 @@ j{version} is defined in https://github.com/sarma1807/cass-prom-file-exporter/bl
 
 ---
 
+### pre-compiled jars are available in following location :
+
+https://github.com/sarma1807/cass-prom-file-exporter/tree/main/build/libs
+
+---
