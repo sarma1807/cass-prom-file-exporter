@@ -1,25 +1,69 @@
-This is currently just a POC.
+## cass-prom-file-exporter : Cassandra Prometheus File Exporter
 
+#### intended to be used with https://github.com/sarma1807/Prometheus-Grafana-Cassandra
 
-Build using the same Java version as Cassandra:
+---
 
-`./gradlew shadowJar`
+## ` *** this code is not compatible with Java 1.8 *** `
 
-Grab the jar and drop it in your Cassandra lib directory.  Something like this perhaps:
+### minimum requirement is Java 11
 
-```shell
-cp ./build/libs/cassandra-dropwizard-1.0-SNAPSHOT-all.jar ../cassandra/lib
+```
+$ java -version
+openjdk version "11.0.22" 2024-01-16 LTS
+OpenJDK Runtime Environment (Red_Hat-11.0.22.0.7-1) (build 11.0.22+7-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-11.0.22.0.7-1) (build 11.0.22+7-LTS, mixed mode, sharing)
+
+$ javac -version
+javac 11.0.22
+```
+##### or use Java 17
+
+```
+$ java -version
+openjdk version "17.0.10" 2024-01-16 LTS
+OpenJDK Runtime Environment (Red_Hat-17.0.10.0.7-1) (build 17.0.10+7-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-17.0.10.0.7-1) (build 17.0.10+7-LTS, mixed mode, sharing)
+
+$ javac -version
+javac 17.0.10
+```
+---
+
+#### git clone this project and prepare for build
+
+```
+cd ~
+git clone https://github.com/sarma1807/cass-prom-file-exporter
+
+cd ~/cass-prom-file-exporter
+chmod u+x gradlew
 ```
 
-Add the agent to your cassandra-env.sh:
+#### build
 
-
-```text
-JVM_OPTS="$JVM_OPTS -javaagent:$CASSANDRA_HOME/lib/cassandra-dropwizard-1.0-SNAPSHOT-all.jar"
+```
+cd ~/cass-prom-file-exporter
+./gradlew shadowJar
 ```
 
-In an ideal world, metrics would be available at:
-
-```text
-http://localhost:1234/metrics
 ```
+-- after some time ...
+BUILD SUCCESSFUL in 2m 47s
+2 actionable tasks: 2 executed
+```
+
+#### if no errors from previous build, then you will have a compiled jar
+
+```
+~/cass-prom-file-exporter/build/libs/CassPromFileExporter-j11-all.jar
+```
+or
+```
+~/cass-prom-file-exporter/build/libs/CassPromFileExporter-j17-all.jar
+```
+
+j{version} is defined in https://github.com/sarma1807/cass-prom-file-exporter/blob/main/build.gradle.kts
+
+---
+
