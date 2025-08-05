@@ -10,12 +10,12 @@
 
 ```
 $ java -version
-openjdk version "11.0.22" 2024-01-16 LTS
-OpenJDK Runtime Environment (Red_Hat-11.0.22.0.7-1) (build 11.0.22+7-LTS)
-OpenJDK 64-Bit Server VM (Red_Hat-11.0.22.0.7-1) (build 11.0.22+7-LTS, mixed mode, sharing)
+openjdk version "11.0.25" 2024-10-15 LTS
+OpenJDK Runtime Environment (Red_Hat-11.0.25.0.9-1) (build 11.0.25+9-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-11.0.25.0.9-1) (build 11.0.25+9-LTS, mixed mode, sharing)
 
 $ javac -version
-javac 11.0.22
+javac 11.0.25
 ```
 ##### or use Java 17
 
