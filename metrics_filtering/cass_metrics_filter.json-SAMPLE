@@ -1,0 +1,27 @@
+{
+  "blacklist": {
+    "startsWith": [
+      "org.apache.cassandra.metrics.Table.system_schema",
+      "org.apache.cassandra.metrics.Table.system_auth",
+      "org.apache.cassandra.metrics.Table.system_distributed",
+      "org.apache.cassandra.metrics.Table.system"
+    ],
+    "contains": [
+      "DroppedTasks",
+      "Latency"
+    ]
+  },
+  "whitelist": {
+    "startsWith": [
+      "org.apache.cassandra.metrics.ClientRequest",
+      "org.apache.cassandra.metrics.Cache"
+    ],
+    "endsWith": [
+      ".Count"
+    ],
+    "exact": [
+      "org.apache.cassandra.metrics.Storage.TotalHintsInProgress",
+      "org.apache.cassandra.metrics.Storage.Load"
+    ]
+  }
+}
