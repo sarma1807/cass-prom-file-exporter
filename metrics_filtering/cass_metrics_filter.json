@@ -1,0 +1,27 @@
+{
+   "blacklist": {
+     "keyspaces": [
+       "system",
+       "dse",
+       "HiveMetaStore",
+       "solr_admin"
+     ],
+    "endsWith": [
+      ".all"
+    ]
+   },
+  "whitelist": {
+    "startsWith": [
+      "org.apache.cassandra.metrics.CommitLog",
+      "org.apache.cassandra.metrics.CQL",
+      "org.apache.cassandra.metrics.Client",
+      "org.apache.cassandra.metrics.Storage",
+      "org.apache.cassandra.metrics.Cache",
+      "org.apache.cassandra.metrics.ClientRequest",
+      "org.apache.cassandra.metrics.keyspace",
+      "org.apache.cassandra.metrics.Table",
+      "org.apache.cassandra.metrics.Compaction"
+    ]
+  }
+}
+
