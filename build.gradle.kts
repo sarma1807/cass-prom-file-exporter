@@ -17,25 +17,20 @@ repositories {
 
 dependencies {
     implementation("io.prometheus:simpleclient:0.16.0")
-    implementation("io.prometheus:simpleclient_dropwizard:0.0.23")
-    implementation("io.prometheus:simpleclient_servlet:0.0.23")
-    compileOnly("org.apache.cassandra:cassandra-all:5.0-beta1")   // oramad : jar will be built for a specific version of cassandra
+    implementation("io.prometheus:simpleclient_dropwizard:0.16.0")
+    implementation("io.prometheus:simpleclient_common:0.16.0") // Added for TextFormat
+    implementation("com.google.code.gson:gson:2.10.1") // oramad : added for json parsing
+    // compile against the specific version of cassandra the agent will run on
+    compileOnly("org.apache.cassandra:cassandra-all:5.0.4")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-// by default, implementation cannot be referenced,
-// this allows us to use it below
-
-tasks.jar {
+// Configure the shadowJar task to create a fat JAR with the Premain-Class attribute.
+// This is the correct way to make a runnable Java agent.
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     manifest {
-        manifest.attributes["Premain-Class"] = "com.oramad.CassPromFileExporter"
-        manifest.attributes["Class-Path"] = configurations
-            .runtimeClasspath
-            .get()
-            .joinToString(separator = " ") { file ->
-                "libs/${file.name}"
-            }
+        attributes["Premain-Class"] = "com.oramad.CassPromFileExporter"
     }
 }
 
