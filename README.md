@@ -21,12 +21,12 @@ javac 11.0.22
 
 ```
 $ java -version
-openjdk version "17.0.10" 2024-01-16 LTS
-OpenJDK Runtime Environment (Red_Hat-17.0.10.0.7-1) (build 17.0.10+7-LTS)
-OpenJDK 64-Bit Server VM (Red_Hat-17.0.10.0.7-1) (build 17.0.10+7-LTS, mixed mode, sharing)
+openjdk version "17.0.16" 2025-07-15 LTS
+OpenJDK Runtime Environment (Red_Hat-17.0.16.0.8-1) (build 17.0.16+8-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-17.0.16.0.8-1) (build 17.0.16+8-LTS, mixed mode, sharing)
 
 $ javac -version
-javac 17.0.10
+javac 17.0.16
 ```
 ---
 
